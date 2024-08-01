@@ -11,4 +11,10 @@ echo "Holberton School" | sudo tee /var/www/html/index.html > /dev/null
 sudo sed -i 's/80 default_server/80 default_server ipv6only=on/' /etc/nginx/sites-available/default
 
 # Restart Nginx using service (systemctl not used)
-sudo service nginx re
+sudo service nginx restart
+
+# Wait for Nginx to restart (add a delay of 2 seconds)
+sleep 2
+
+# Check if Nginx returns the expected content
+curl -s http://localhost | grep "Holberton School"
