@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# restart http service to make sure it is running
-sudo service apache2 restart
+# Start Apache so as to return a
+# page conatining Hello Holberton
+service apache2 start
